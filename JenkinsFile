@@ -1,7 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('Compile') {
+        stage('clean') {
+            steps {
+                bat 'C:/Build/apache-maven-3.9.8/bin/mvn clean'
+            }
+        }
+ stage('validate') {
+            steps {
+                bat 'C:/Build/apache-maven-3.9.8/bin/mvn validate'
+            }
+        }
+ stage('Compile') {
             steps {
                 bat 'C:/Build/apache-maven-3.9.8/bin/mvn compile'
             }
