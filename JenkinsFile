@@ -1,14 +1,10 @@
-pipeline
-{
-agent any
-stages
-{
-stage ('compile')
-{
-steps
-{
+pipeline {
+    agent any
+    stages {
+        stage('Compile') {
+            steps {
                 bat 'C:/Build/apache-maven-3.9.8/bin/mvn compile'
-}
-}
-}
+            }
+        }
+    }
 }
